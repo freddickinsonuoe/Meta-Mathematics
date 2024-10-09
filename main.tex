@@ -1,3 +1,5 @@
+% TODO: go through the entire preamble and sort what's not needed!
+
 \documentclass[12pt]{article}
 
 % Character encoding
@@ -46,6 +48,14 @@
 
 \usepackage[framemethod=TikZ]{mdframed}
 \usepackage{./thmboxes_v2}
+
+\usepackage{csquotes}
+\usepackage[
+    natbib=true,
+    style=numeric,
+    sorting=none
+]{biblatex}
+\addbibresource{bibliography.bib}
 
 
 % personal command overrides
@@ -206,12 +216,17 @@ for unchecked_triple in all_triples:
 # all_triples.sort()
 all_triples
 
-> [(3, 4, 5), (5, 12, 13), (15, 8, 17), (6, 8, 10), (9, 12, 15), (12, 16, 20),
-(15, 20, 25), (18, 24, 30), (21, 28, 35), (24, 32, 40), (27, 36, 45), 
-(10, 24, 26), (15, 36, 39), (30, 16, 34)]
+> [(3, 4, 5), (5, 12, 13), (15, 8, 17), (6, 8, 10), (9, 12, 15), 
+(12, 16, 20),(15, 20, 25), (18, 24, 30), (21, 28, 35), (24, 32, 40), 
+(27, 36, 45), (10, 24, 26), (15, 36, 39), (30, 16, 34)]
 
 
 \end{minted}
+
+\pagebreak 
+
+\nocite{*}
+\printbibliography{}
 
 
 
