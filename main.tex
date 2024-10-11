@@ -125,11 +125,17 @@ Info on BibTex.
 \subsection{Paper Access and Storing}
 Info on how we will share and access relevant papers.
 
+\subsection{Glossary of Terms}
+\begin{enumerate}[itemsep=-2mm]
+    \item MAPLE - ``math software that combines the world's most powerful math engine with an interface that makes it extremely easy to analyze, explore, visualize, and solve mathematical problems."
+    \item 
+\end{enumerate}
+
 \pagebreak 
 
 \section{Reading Material}
 
-\subsection{AI Cuoco: Meta-Problems in Mathematics}
+\subsection{AI Cuoco (2000): Meta-Problems in Mathematics}
 ``Problems that come out nice allow students to concentrate on important ideas rather than messy calculations". We call the idea of making up a nice problem a ``meta-problem". Algebra and number theory are key for the creation of a lot of meta-problems - Cuoco explores a few examples.
 
 \subsubsection{Pythagorean Triples}
@@ -148,80 +154,76 @@ is indeed a Pythagorean triple. This triple is primitive if and only if $m$ and 
 \end{thm}
 \textit{*note - there is a technicality in the changing of $a$ and $b$.}\\\\
 We can use computers to help us generate any Pythagorean triple suitable for class problems. See the next page for an example script.\\\\
-\hl{Including the script in \LaTeX{} is kinda ugly so might delete later?}
+\hl{Including the script in \LaTeX{} is not pretty so I've deleted it for now, but I have it on my Jupyter Notebook.}
 
-\pagebreak 
-\noindent \textbf{An example script to generate all Pythagorean triples $(a, b, c)$ with an upper bound on $c$.}
+\subsection{Mansfield (2017) \& Robson (2001): Plimpton 322}
+The Plimpton 322 is a Babylonian clay tablet with four rows and fifteen columns of various numbers. Robson (2001) provides a ``re-assessment" of what the content of the tablet means. Mansfield does similar, quoting
+\begin{quote}
+    \textit{``we propose that P322 is a different kind of trigonometric table which lists right triangles with long side 1, exact short side $\beta$ and exact diagonal $\beta$ – in place of the approximations $\sin(\theta)$ and $\cos(\theta)$".}
+\end{quote}
+They are both quite historical papers with less mathematical content than others.
 
-\begin{minted}{python}
-def generate_pythagorean_triples(c_max):
-    """
-    Generates pythagorean triples with no component greater than c_max.
-    Uses (a variant of) Euclid's formula.
-    """
+\subsection{Steele (2003): Setting Linear Algebra Problems}
+\textit{``I was disappointed by the level of arithmetic competence of my students, and annoyed to find that problems were being set where this lack of competence meant one could never really see whether students understood the material and techniques or not"} - the same rationale as Cuoco in setting problems that allow students to focus on the problem at hand.\\\\
+Provides methods for coming up with nice problems for various linear algebra topics. Occasionally makes use of MAPLE.
 
-    # generates ppt's
-    m, n = 3, 1
-    pythag_triples = []
+\subsubsection{Vectors of Integer Norm}
+In $\R^2$ this is simply finding Pythagorean triples. He also makes use of Lagrange's theorem;
+\begin{thm}[Lagrange's Theorem]{}{}
+Any integer can be decomposed into the sum of at most four squares.
+\end{thm}
+So this is useful for finding vectors $\bm{x} \in \R^4$ with integer norm. \hl{He does not give any detail into how we may decompose these integers.}
 
-    while (m**2 + n**2 < c_max):
-        # iterate through for n fixed, change m
-        while (m**2 + n**2 < c_max):
-            triple = calc_triple(m, n)
-            pythag_triples.append(triple)
+\subsubsection{Matrices of a Given Determinant}
+Recall the LU factorisation from ILA/NLA/Honours Algebra
+\begin{dfn}[\textbf{LU} Factorisation]{}{}
+An \textbf{LU factorisation} of some $\bm{A} \in \R^{n\times n}$ is $\bm{A} = \bm{LU}$ where
+\begin{enumerate}[itemsep=-2mm]
+    \item $\bm{L} \in \R^{n \times n}$ is unit lower triangular,
+    \item $\bm{U} \in \R^{n \times n}$ is non-singular upper triangular.
+\end{enumerate}
+\end{dfn}
+Unit lower triangular means entries on the diagonal are one. A better decomposition involves a permutation matrix $P$ as \textit{any} matrix can be decomposed into a permutation matrix $P$ and $L$, $U$ as above.\\\\
+The most useful way to use the $PLU$ decomposition is to work backwards and create matrices with determinants $\pm1$. This is because of the following theorem. \textit{He does not explicitly go through how to create such matrices but does comment on it.}
+\begin{thm}[Inverse of Matrices with Unit Determinants]{}{}
+Let $\mathbf{A}$ be a square integer matrix. Then $\mathbf{A}^{-1}$ is an integer matrix iff $\det(\mathbf{A}) = \pm1$.
+\end{thm}
+\textit{He gives a proof of this theorem.}
 
-            m = m + 2
+\subsubsection{Further Chapters}
+He goes through a lot more topics in similar detail. The chapters are
+\begin{enumerate}[itemsep=-2mm]
+    \item matrices with a given kernel,
+    \item leontieff input-output matrices,
+    \item orthogonal matrices,
+    \item gram-schmidt and qr decomposition,
+    \item least-squares problems,
+    \item householder matrices,
+    \item matrices with a given jordan normal form,
+    \item orthogonal matrices in $\R^3$,
+    \item symmetric matrices with given eigenvalues,
+    \item matrices with easily calculated exponential.
+\end{enumerate}
 
-        # change n and reset m, resetting the process
-        n = n + 2
-        m = n + 2 
+\subsection{Naiman (2022) - Generating Parametrized Linear Systems}
+...  for Teaching Linear Algebra.\\\\
+Again follows the rationale of creating problems that allow students to focus on the  task at hand instead of arithmetic. This paper focuses on:
+\begin{quote}
+\textit{For what values of the input parameter $k$, does the following linear system,
+    $\mathbf{ax} = b$, have: 
+    \begin{enumerate}[itemsep=-2mm]
+        \item no solutions,
+        \item a unique solution (and what it is),
+        \item      an infinite number of solutions (and what they are).
+    \end{enumerate}}
+\end{quote}
+They go through their process and the challenges faced before providing a full algorithm for the problem.
 
-
-    # ppt's have been generated, so generate any scalar component too
-    scalar_triples = []
-    for ppt in pythag_triples:
-        a, b, c = ppt
-        k = 2
-
-        while (c * k) < c_max:
-            new_triple = (a * k, b * k, c * k)
-            scalar_triples.append(new_triple)
-            k = k + 1
-            
-    all_pythag_triples = pythag_triples + scalar_triples
-    return all_pythag_triples
-\end{minted}
-We run the function with an upper bound of $50$ and verify that all outputs are Pythagorean triples.
-\begin{minted}{python}
-def calc_triple(m, n):
-    """
-    Calculates a Pythagorean triple using Euclid's formula.
-    Assumes odd integers m > n
-    """
-    
-    a = m * n
-    b = int((m**2 - n**2) / 2)
-    c = int((m**2 + n**2) / 2)
-
-    pythag_triple = (a, b, c)
-    return pythag_triple
-
-
-all_triples = generate_pythagorean_triples(50)
-for unchecked_triple in all_triples:
-    a, b, c = unchecked_triple
-    if (a**2 + b**2) != c**2:
-        print("Something went wrong!")
-
-# all_triples.sort()
-all_triples
-
-> [(3, 4, 5), (5, 12, 13), (15, 8, 17), (6, 8, 10), (9, 12, 15), 
-(12, 16, 20),(15, 20, 25), (18, 24, 30), (21, 28, 35), (24, 32, 40), 
-(27, 36, 45), (10, 24, 26), (15, 36, 39), (30, 16, 34)]
+\subsection{Convertito (2016): Building the Biggest Box}
+... Three Factor Polynomials and a Diophantine Equation.\\
+Read by Lara.
 
 
-\end{minted}
 
 \pagebreak 
 
