@@ -119,17 +119,33 @@ This project is linked to a \href{https://github.com/freddickinsonuoe/Meta-Mathe
     \item when you want to make changes, push them to the repository. Again see ``Menu - GitHub - Push Changes"
 \end{enumerate}
 
-\subsection{BibTex}
-Info on BibTex.
+\subsection{BibTex \& Paper Access}
+We use \textsc{BibTex} to store information about our references. Most papers are stored in the overleaf file tree and are named ``author/year". To reference a paper existing in the bibliography (bibliography.bib) use
+\begin{verbatim}
+    $\cite{authorYear}$
+\end{verbatim}
+that will produce $\cite{green1976}$ (in the case of Green, 1976).
 
-\subsection{Paper Access and Storing}
-Info on how we will share and access relevant papers.
+\subsection{Rough Plan}
+Looking to do a ``storytelling" project on meta-mathematics. Possible sections could be
+\begin{enumerate}[itemsep=-2mm]
+    \item what is meta mathematics (where can we apply),
+    \item its history,
+    \item common themes (e.g pythagorean triples),
+    \item exploring a theme in more detail (cubics)
+    \item exploring more theme(s) in detail \textbf{if applicable},
+    \item closing.
+\end{enumerate}
+
+\noindent The ``in more detail" could include: how we create nice cubics, cardano's formula, applying this to past papers, ...\\\\
+(\textbf{Cubics}) Good papers include Johnson (2015), Jeffrey (2004), Buddenhagen (1992).\\
+(\textbf{General)} See Steele, Cuoco, Shirali.
 
 \subsection{Glossary of Terms}
 \begin{enumerate}[itemsep=-2mm]
-    \item MAPLE - ``math software that combines the world's most powerful math engine with an interface that makes it extremely easy to analyze, explore, visualize, and solve mathematical problems."
-    \item 
+    \item \textsc{Maple} - ``math software that combines the world's most powerful math engine with an interface that makes it extremely easy to analyze, explore, visualize, and solve mathematical problems."
 \end{enumerate}
+
 
 \pagebreak 
 
@@ -165,7 +181,7 @@ They are both quite historical papers with less mathematical content than others
 
 \subsection{Steele (2003): Setting Linear Algebra Problems}
 \textit{``I was disappointed by the level of arithmetic competence of my students, and annoyed to find that problems were being set where this lack of competence meant one could never really see whether students understood the material and techniques or not"} - the same rationale as Cuoco in setting problems that allow students to focus on the problem at hand.\\\\
-Provides methods for coming up with nice problems for various linear algebra topics. Occasionally makes use of MAPLE.
+Provides methods for coming up with nice problems for various linear algebra topics. Occasionally makes use of \textsc{Maple}.
 
 \subsubsection{Vectors of Integer Norm}
 In $\R^2$ this is simply finding Pythagorean triples. He also makes use of Lagrange's theorem;
@@ -320,16 +336,13 @@ Without solving the equation, find the value of:
 \end{enumerate}
 
 
-\nocite{*}
-\printbibliography{}
-
-
 
 % End of document - with bibliography.
 \pagebreak 
 
 \nocite{*}
 \printbibliography{}
+
 
 
 \end{document}
