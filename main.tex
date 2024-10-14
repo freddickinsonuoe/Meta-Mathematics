@@ -247,8 +247,19 @@ The paper has the intent of providing a systematic and unified presentation for 
 They go through, using various different parts of mathematics to provide a solution for this problem in quite good depth.
 
 \subsection{Jeffrey (2004): Not seeing the roots for the branches: multivalued functions in computer algebra}
-This paper examines the validity of Cardano's Method by comparing its results to mathematical software Maple and Mathematica. Indeed, depending on the definition of the cube root used, Cardano's Method can produce an answer equivalent to the one of the software. For example, when Cardano's Method is applied to a reduced cubic of the form $y^3 + 3py - 2q = 0$, the procedure goes as follows:
-
+This paper examines the validity of Cardano's Method by comparing its results to mathematical software Maple and Mathematica. Indeed, depending on the definition of the cube root used, Cardano's Method can produce an answer equivalent to the one of the software. For example, when Cardano's Method is applied to a reduced cubic of the form $y^3 + 3py - 2q = 0$, the roots $y_1, y_2, y_3$ are given as follows:
+\begin{align*}
+    y_1 = s_1 + s_2\\
+    y_2 = - \frac{1}{2} (s_1+s_2) + i \frac{\sqrt{3}}{2}(s_1-s_2)\\
+    y_3 = - \frac{1}{2} (s_1+s_2) - i \frac{\sqrt{3}}{2}(s_1-s_2)
+\end{align*}
+with
+\begin{align*}
+    s_1 = (q+\sqrt{q^2 + p^3} )^\frac{1}{3}\\
+    s_2 = (q-\sqrt{q^2 + p^3} )^\frac{1}{3}\\
+    p = -s_1 s_2
+\end{align*}
+These results are incorrect when considering the principal value or the real branch as the definition of the cube root. However, the results are correct when the cube root is defined as a value from the set $z^\frac{1}{3}$.
 
 
 \subsection{Green (1976): The Historical Development of Complex Numbers}
