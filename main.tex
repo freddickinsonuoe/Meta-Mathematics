@@ -141,6 +141,16 @@ Looking to do a ``storytelling" project on meta-mathematics. Possible sections c
 (\textbf{Cubics}) Good papers include Johnson (2015), Jeffrey (2004), Buddenhagen (1992).\\
 (\textbf{General)} See Steele, Cuoco, Shirali.
 
+\subsection{Common Themes}
+For now just a basic list;
+\begin{enumerate}[itemsep=-2mm]
+    \item pythagoras' theorem,
+    \item diophantine equations,
+    \item Gaussian integers,
+    \item Eisenstein integers,
+    
+\end{enumerate}
+
 \subsection{Glossary of Terms}
 \begin{enumerate}[itemsep=-2mm]
     \item \textsc{Maple} - ``math software that combines the world's most powerful math engine with an interface that makes it extremely easy to analyze, explore, visualize, and solve mathematical problems."
@@ -171,6 +181,20 @@ is indeed a Pythagorean triple. This triple is primitive if and only if $m$ and 
 \textit{*note - there is a technicality in the changing of $a$ and $b$.}\\\\
 We can use computers to help us generate any Pythagorean triple suitable for class problems. See the next page for an example script.\\\\
 \hl{Including the script in \LaTeX{} is not pretty so I've deleted it for now, but I have it on my Jupyter Notebook.}
+
+\subsection{Johnson (2015): Nice Cubics}
+Gives a detailed explanation and algorithm for producing nice cubics; there's a big link to Eisenstein triples (and Eisenstein integers) which is similar to material we've seen before in number theory.
+
+\subsubsection{Gaussian Integers vs Eisenstein Integers}
+The Gaussian integers, as seen before in number theory, is the ring $\Z[i]$ s.t
+\begin{equation*}
+    \Z[i] = a + bi \qquad \text{where}~a,b\in \Z.
+\end{equation*}
+This has a big link to \textit{Pythagorean triples.} Recall the norm of some Gaussian integer $z \in \Z[i]$ is given
+\begin{equation*}
+    N(z) = ||a+bi||_2 = (a+bi)(a-bi) = a^2 + b^2.
+\end{equation*}
+As $a$ and $b$ are both integers then so is the norm. We 
 
 \subsection{Mansfield (2017) \& Robson (2001): Plimpton 322}
 The Plimpton 322 is a Babylonian clay tablet with four rows and fifteen columns of various numbers. Robson (2001) provides a ``re-assessment" of what the content of the tablet means. Mansfield does similar, quoting
