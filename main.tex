@@ -299,6 +299,82 @@ or as
 \[\sqrt{-a} \sqrt{-b} = (\sqrt{-1} \times \sqrt{a}) \times (\sqrt{-1} \times \sqrt{b}) = (\sqrt{-1})^2 \sqrt{a} \sqrt{b} = -\sqrt{ab} \]
 This aligns well with Green (1976) which highlighted the misconceptions about complex numbers of Cardano's time.
 
+\section{Creating Nice Cubics}
+This gives an explanation of the introduction to Johnson's paper and then explores how we can generate these so-called \textit{Eisenstein triples}.
+
+\subsection{Derivation of the Diophantine Equation}
+We first consider some cubic. We want it to have \textit{integer roots} and a \textit{rational turning point.} Up to suitable translation and scaling, we can consider a monic polynomial with one root at zero i.e
+\begin{equation*}
+    f(x) = x(x-a)(x-b)
+\end{equation*}
+where $a$ and $b$ are our integer roots. Expanding this we find
+\begin{align*}
+    f(x) &= x(x^2 - (a + b)x + ab)\\
+    &= x^3 - (a+b)x^2 + abx
+\end{align*}
+and thus the derivative to consider is
+\begin{equation*}
+    f'(x) = 3x^2 - 2(a+b)x + ab.
+\end{equation*}
+Of course the values at the \textit{turning point} are when this derivative is equal to zero. We use the quadratic formula (or completing the square, essentially analogous) to find the solutions to this equation
+\begin{equation*}
+    x = \frac{2(a+b) \pm \sqrt{(-2(a+b))^2-12ab}}{6} = \frac{(a+b) \pm \sqrt{(a+b)^2 - 3ab}}{3}.
+\end{equation*}
+We want the turning point to be \textit{rational} i.e for some integer $c \in \Z$
+\begin{equation}\label{eq:diophantine_eq1}
+    (a+b)^2 - 3ab = c^2 \implies a^2 - ab + b^2 = c^2.
+\end{equation}
+This is the \textit{Diophantine equation} that will henceforth be referenced. Recall we have all $a, b, c$ integers.
+
+\subsection{What are Eisenstein Integers?}
+The notion of \textit{Pythagorean triples} is familiar; the triple $(a, b, c)$ is a Pythagorean triple if $a^2 + b^2 = c^2$. Geometrically this links to a right angled triangle. We have seen in number theory that these are linked to Gaussian integers. Indeed, for some Gaussian integer $z \in \Z[i]$ we can introduce the norm
+\begin{equation*}
+    N(z) = z\conj{z} = (a + bi)(a + b\conj{i}) = (a+bi)(a-bi) =  a^2 + b^2.
+\end{equation*}
+So a Pythagorean triple $(a, b, c)$ can be found by taking the norm of any Gaussian integer; that is, if $z = a + bi \in \Z[i]$ then $N(z) = c^2$.\\\\
+Eisenstein triples are similar. Recall the Cosine rule (also known as the law of cosines)
+\begin{equation*}
+    c^2 = a^2 + b^2 - 2ab\cos(C)
+\end{equation*}
+and suppose we are looking for triangles with one angle of $60$ degrees. We know $\cos(60) = \frac{1}{2}$ and thus the equation becomes
+\begin{equation*}
+    c^2 = a^2 - ab + b^2
+\end{equation*}
+and triples that satisfy such equation (look familiar?) are called \textit{Eisenstein triples}.\\\\
+We now introduce Eisenstein integers. These are to Eisenstein triples what Gaussian integers are to Pythagorean triples. Eisenstein integers are the ring
+\begin{equation*}
+    \Z[\omega] = \{a + b\omega : a, b \in \Z\}
+\end{equation*}
+where $\omega$ is a cube root of unity. Being a cube root of unity gives $\omega$ a lot of properties, so we explore it in its entirety. By definition, a cube root of unity is a root to the equation
+\begin{equation*}
+    (\omega-1)(\omega^2 + \omega + 1) = 0
+\end{equation*}
+and thus we can assert our first property $\omega^2 = -(1 + \omega)$. We often represent (the complex values of) $\omega$ 
+\begin{equation*}
+    \omega = \frac{-1 \pm i\sqrt{3}}{2} = e^{\frac{2\pi i }{3}}
+\end{equation*}
+and it's easy to show that $\conj{\omega} = \omega^2$ (consider the transformation on an Argand diagram).\\\\
+Circling back to our Diophantine equation; how are these linked? We've mentioned that they are analogous to that of Gaussian integers to the Pythagorean triples and indeed, if we consider the norm of some $z \in \Z[\omega]$
+\begin{equation*}
+    N(z) = z\conj{z} = (a+b\omega)(a+b\conj{\omega}) = \dots = a^2 - ab + b^2
+\end{equation*}
+where the algebraic simplification is an exercise in using the properties of $\omega$ outlined above. So, as we saw before, we can generate an Eisenstein triple $(a, b, c)$ by considering the norm of an Eisenstein integer $N(a + b\omega)$ \dots\\\\
+\dots and we've seen how this is done by Johnson \cite{johnson2011} and Read \cite{read2006}. They have different approaches and formulas but one is given (in this case by Read)
+\begin{quote}
+    \textit{Let $p, q$ be positive integers such that $p$ and $q$ are coprime and $q$ is not divisible by $3$. Then the triple
+    \begin{align*}
+        a &= 2pq + q^2,\\
+        b &= 3p^2 + 4pq + q^2,\\
+        c &= 3p^2 + 3pq + q^2
+    \end{align*}
+    form a (primitive) triangle such that one of the angles is 60 degrees}
+\end{quote}
+\dots i.e an Eisenstein triple. We can test this with $p = 1, q = 2$ (for example) and see that we indeed have a solution $a = 8, b = 15, c= 13$ where the cubic $x(x-8)(x-15)$ is ``nice". This is not exhaustive; there are other formulae (at least for Read, Johnson is slightly more complicated) needed.
+
+\subsection{Can We Use It?}
+If we can find a new way to generate triples/solve this Diophantine equation (perhaps using Eisenstein triples, perhaps using complex numbers) then we can use it in our project. If not, Chris probably won't approve - it's ``nothing new". At the very least it can be used in common themes - this is the second time Eisenstein triples have come up now, they're also seen in Cuoco's paper \autocite{cuoco2000} and applied to the context of finding nice cubics.
+
+
 \section{Past Paper Questions}
 
 \subsection{A-Level Further Maths Cubic Questions}
