@@ -154,6 +154,7 @@ For now just a basic list;
 \subsection{Glossary of Terms}
 \begin{enumerate}[itemsep=-2mm]
     \item \textsc{Maple} - ``math software that combines the world's most powerful math engine with an interface that makes it extremely easy to analyze, explore, visualize, and solve mathematical problems."
+    \item \textsc{Mathematica} - also sometimes called \textsc{Wolfram Mathematica} ``software system with built-in libraries for several areas of technical computing that allow machine learning, symbolic computation, optimization, plotting functions and various types of data, implementation of algorithms, interfacing with programs written in other programming languages, etc"
 \end{enumerate}
 
 
@@ -269,6 +270,23 @@ The box problem specifically finds all the solutions of the Diophantine equation
 \subsection{Buddenhagen (1992) - Nice Cubic Polynomials and More}
 The paper has the intent of providing a systematic and unified presentation for finding ``nice" cubics. Here nice means the roots and critical points are rational numbers with small denominators.\\\\
 They go through, using various different parts of mathematics to provide a solution for this problem in quite good depth.
+
+\subsection{Gordon (2012) - Properties of Eisenstein Triples}
+As the title suggests, this points out nice Number Theory properties of Eisenstein triples and gives their proofs. The three most interesting and useable ones in my opinion are the following.
+\begin{thm}{}{} %% I don't get why the numbering doesn't follow the rest but it's not a big issue
+    If $(a,b,c)$ is a primitive Eisenstein triple, then $c$ is neither a multiple of $2$ nor $3$. More generally, the only prime factors of $c$ are primes of the form $6k + 1$.
+\end{thm}
+\begin{thm}{}{}
+    If $(a,b,c)$ is an Eisenstein triple, then $2c > 2b - a$ and $2c > a + b$.
+\end{thm}
+\begin{thm}{}{}
+    Suppose that $a$, $b$, and $c$ are positive integers.
+    \begin{enumerate}
+        \item If $(a,b,c)$ is an Eisenstein triple with $a<b-a$, then $(a,b-a,c)$ is a $120°$ triple.
+        \item If $(a,b,c)$ is a $120°$ triple, then $(a, a+b, c)$ and $(b,a+b,c)$ are Eisenstein triples.
+    \end{enumerate}
+\end{thm}
+For context, a $120°$ triple is to an Eisenstein triple what a $120°$ angle is to a $60°$ angle. It might be interesting to focus on them too, but there may be less information on them. We say $(a,b,c)$ is a $120°$ triple if $0<a<b<c$ and $a^2 + ab + b^2 = c^2$. Figure 2 of the paper nicely shows the relation between the two types of triples. Maybe using a combination of both for meta-mathematical purposes could be nice?
 
 \subsection{Jeffrey (2004): Not seeing the roots for the branches: multivalued functions in computer algebra}
 This paper examines the validity of Cardano's Method by comparing its results to mathematical software \textsc{Maple} and \textsc{Mathematica}. Indeed, depending on the definition of the cube root used, Cardano's Method can produce an answer equivalent to the one of the software. For example, when Cardano's Method is applied to a reduced cubic of the form $y^3 + 3py - 2q = 0$, the roots $y_1, y_2, y_3$ are given as follows:
