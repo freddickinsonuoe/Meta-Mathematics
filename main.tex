@@ -330,6 +330,127 @@ Special Case 4: c(x) has a triple (i.e. multiplicity 3) integer root requires $c
 
 Special Case 5: c(x) has a double integer root and another integer root has four different possible ways of being true.
 
+\pagebreak 
+
+\section{Exploring The Cubic}
+
+\subsection{Elementary Results}
+Elementary results, sometimes with proofs.
+
+\subsubsection{Critical Points and Inflection Points}
+A \textit{cubic function} is a degree three polynomial $f(x) = ax^3 + bx^2 + cx + d$ where $a, b, c, d$ are constants with $a \neq 0$. The function has three roots with \textit{at least one} real root. The derivative of a cubic function is a quadratic function.\\\\
+The graph of a cubic function always has a single \textit{inflection point}. It may also have two \textit{critical points}, and if it does not, we say the graph is monotonic.
+\begin{dfn}[Inflection Point]
+The inflection point is a point on a smooth curve where the curvature changes sign; this is where a function changes from being concave to convex. This point can be found by solving $f''(x) = 0$.
+\end{dfn}
+The definition of critical points and monotonicity are not written here.
+\begin{thm}[Cubic Functions and Inflection Points]
+A cubic function always has a single, unique inflection point.
+\end{thm}
+\begin{proof}
+Consider some cubic function $ax^3 + bx^2 + cx + d$ where $a, b, c, d \in \R, a \neq 0$. Taking the first and second derivatives,
+\begin{align*}
+    f'(x) &= 3ax^2 + 2bx + cd,\\
+    f''(x) &= 6ax + 2b.
+\end{align*}
+As $a \neq 0$, the second derivative $f''(x)$ is a linear function in $x$ and thus has one unique solution to $f''(x) = 0$. It follows that there exists a single, unique point of inflection for the cubic function.
+\end{proof}
+\textit{Remark.} A ``cubic equation" is defined as a function
+\begin{equation*}
+    ax^3 + bx^2 + cx + d = 0,\qquad a \neq 0.
+\end{equation*}
+
+\subsubsection{Roots of Odd Degree Polynomials}
+We use the notion that a real number is a particular kind of complex number $z = a + bi$ where $b = 0$. First we recall two theorems.
+\begin{rcl}[The Fundamental Theorem of Algebra]
+If $P(z)$ is a non-zero, single variable degree $n$ polynomial with complex coefficients then it has, counted with multiplicity, exactly $n$ complex roots.
+\end{rcl}
+\textit{Remark.} This is an alternative definition for the fundamental theorem of algebra. It is equivalent to saying that the complex numbers $\mathbb{C}$ are algebraically closed.
+\begin{rcl}[The Intermediate Value Theorem]
+If $f$ is a continuous function whose domain contains $[a, b]$, then it takes on any given value between $f(a)$ and $f(b)$ at some point in $[a, b]$.
+\end{rcl}
+\begin{thm}[Roots of Odd Degree Polynomials]
+Any real-valued polynomial with odd degree have at least one real root.
+\end{thm}
+\begin{proof}
+    \textit{(By the IVT)} Consider a polynomial $P(x)$ with real coefficients and degree $n$, where $n$ is odd i.e
+    \begin{equation*}
+        P(x) = a_0 + a_1x + a_2x^2 + \dots + a_nx^n = \sum_{k = 0}^n \alpha_kx^k.
+    \end{equation*}
+    Assume $a_n > 0$. Then as $x \rightarrow \infty$, $P(x) \rightarrow \infty$; and similarly, as $x \rightarrow -\infty$, $P(x) \rightarrow -\infty$. Then, by the intermediate value theorem, there is some point $y \in \R$ such that $P(y) = 0$.
+\end{proof}
+\textit{Remark.} Informal proof with some missing parts. The case of $a_n < 0$ is analogous.
+\begin{proof}
+    (\textit{By the FTA)} Consider a polynomial $P(z)$ with real coefficients and degree $n$, where $n$ is odd. By the fundamental theorem of algebra, $P(z)$ has, counted with multiplicity, exactly $n$ complex roots. We consider the set of roots $\{z_j\}_{j=1}^n$ and note, by the theorem on complex conjugates,
+    \begin{equation*}
+        z \in \{z_j\}_{j=1}^n \implies \conj{z} \in \{z_j\}_{j=1}^n.
+    \end{equation*}
+    However, as $n$ is odd, there must exist at least one root $z$ such that $z = \bar{z}$ and thus such $z \in \R$, as required.
+\end{proof}
+
+\subsection{Depressed Cubics}
+\begin{dfn}[Depressed Cubics]
+A \textit{depressed cubic} is a cubic with no quadratic term; that is, if $P(x) = ax^3 
++ bx^2 + cx + d$ then a depressed cubic is the case where $b = 0$.
+\end{dfn}
+\begin{thm}[Cubics Can Be Sad Too]
+All cubic functions can be depressed; that is, any cubic can be reduced, by a change of variable, such that it is a depressed cubic.
+\end{thm}
+\textit{Remark.} We first give intuitive explanations before proceeding with a more formal proof.\\\\
+\textit{Intuitive Approach.} Consider any cubic, and now consider transforming such cubic such that its point of inflection is about $x = 0$. We've seen that
+\begin{equation*}
+    P(x) = ax^3 + bx^2 + cx + d \implies P''(x) = 6ax + 2b
+\end{equation*}
+and, given the point of inflection happens when $x = -\frac{b}{3a}$, if the point of inflection is about $x = 0$ then necessarily $b = 0$.\\\\
+\textit{Intuitive Approach \#2.} As before, we can transform any cubic such that its point of inflection is about $x = 0$. Therefore it is an odd function; $P(x) = -P(x)$. Thus, necessarily $b = 0$ as the cubic
+\begin{equation*}
+    P(x) = ax^3 + bx^2 + cx + d
+\end{equation*}
+is odd if and only if $b = 0$.
+\begin{proof}
+    \textit{(Formal proof).} Canno be bothered.
+\end{proof}
+
+\noindent \textbf{The change of variable.} The change of variable in question is
+\begin{equation*}
+    x = t - \frac{b}{3a}
+\end{equation*}
+which should align with our intuitive understanding. If the point of inflection is at $x = -\frac{b}{3a}$ then by translating the graph across by such value, the inflection point is now about $x = 0$. Indeed, if we consider the depressed cubic $t^3 + pt + q = 0$, then
+\begin{equation*}
+    t = x + \frac{b}{3a}, \quad p =\frac{3ac - b^2}{3a^2}, \quad q = \frac{2b^3 - 9abc + 27a^2d}{27a^3}
+\end{equation*}
+and again, the roots are linked
+\begin{equation*}
+    x_k = t_k - \frac{b}{3a},\qquad k = 1,2,3.
+\end{equation*}
+
+\subsection{The Discriminant}
+The discriminant of a polynomial is a function of its coefficients - we know that for a quadratic, the discriminant is $b^2 - 4ac$. Formally, we say the that the discriminant is nonzero if and only if the polynomial has no squares.
+\begin{dfn}[Discriminant of a Cubic]
+The discriminant $\mathbf{\Delta}$ of a cubic function $ax^3 + bx^2 + cx + d$ is given
+\begin{equation*}
+    \mathbf{\Delta} = 18abcd - 4b^3d + b^2c^2 - 4ac^3 - 27a^2d^2.
+\end{equation*}
+For a depressed cubic $t^3 + pt + q$ this reduces down to
+\begin{equation*}
+    \mathbf{\Delta} = -(4p^3 + 27q^2)
+\end{equation*}
+and if the roots $r_1, r_2, r_3$ are known,
+\begin{equation*}
+    \mathbf{\Delta} = a^4(r_1 - r_2)^2(r_1 - r_3)^2(r_2 - r_3)^2.
+\end{equation*}
+\end{dfn}
+If the coefficients of a cubic are real and the discriminant is not zero, then
+\begin{enumerate}[itemsep=-2mm]
+    \item if $\mathbf{\Delta} > 0$ then the cubic has three distinct real roots,
+    \item if $\mathbf{\Delta} < 0$ then the cubic has one real root and two complex conjugate roots.
+\end{enumerate}
+If the discriminant is zero, then it has a multiple root. Furthermore, if it has real coefficients, then all of its roots are real. This can be easily shown using the definition of the discriminant involving the roots.
+
+
+
+\pagebreak 
+
 \section{Creating Nice Cubics}
 This gives an explanation of the introduction to Johnson's paper and then explores how we can generate these so-called \textit{Eisenstein triples}.
 
