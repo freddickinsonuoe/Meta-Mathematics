@@ -424,6 +424,15 @@ and again, the roots are linked
     x_k = t_k - \frac{b}{3a},\qquad k = 1,2,3.
 \end{equation*}
 
+\subsubsection{Solving Depressed Cubics via Linear Methods}
+See \href{https://www.desmos.com/calculator/xkcdxf7sy2}{this Desmos demonstration} for reference.\\\\
+Any depressed cubic can be solved by simultaneously solving
+\begin{align*}
+    ay + bx + c &= 0,\\
+    y &= x^3.
+\end{align*}
+This comes quite easily from considering the substitution $y = x^3$ into the form of a depressed cubic.
+
 \subsection{The Discriminant}
 The discriminant of a polynomial is a function of its coefficients - we know that for a quadratic, the discriminant is $b^2 - 4ac$. Formally, we say the that the discriminant is nonzero if and only if the polynomial has no squares.
 \begin{dfn}[Discriminant of a Cubic]
@@ -446,6 +455,8 @@ If the coefficients of a cubic are real and the discriminant is not zero, then
     \item if $\mathbf{\Delta} < 0$ then the cubic has one real root and two complex conjugate roots.
 \end{enumerate}
 If the discriminant is zero, then it has a multiple root. Furthermore, if it has real coefficients, then all of its roots are real. This can be easily shown using the definition of the discriminant involving the roots.
+
+
 
 
 
