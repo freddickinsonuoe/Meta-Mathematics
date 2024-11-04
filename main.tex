@@ -578,8 +578,26 @@ Here is a non-exhaustive list of Eisenstein triples with $a$, $b$, and $c$ as pr
 If we can find a new way to generate triples/solve this Diophantine equation (perhaps using Eisenstein triples, perhaps using complex numbers) then we can use it in our project. If not, Chris probably won't approve - it's ``nothing new". At the very least it can be used in common themes - this is the second time Eisenstein triples have come up now, they're also seen in Cuoco's paper \autocite{cuoco2000} and applied to the context of finding nice cubics.
 
 \subsection{Lara's Conjecture \& Co}
-If a cubic is of the form $(x-1)(x+a)^2$ then it has two \textit{integer turning points} when $a = 2-3k$ for $k = 1, 2, \dots$. \\
-If a cubic is of the form $x^3 + bx^2 + cx + d$ where $b$ and $c$ are both multiples of $3$, then it will have \textit{integer turning points} if $k_1^2 - k_2$ is a perfect square, i.e. $\sqrt{k_1^2 - k_2}$ is an integer, for $b = 3k_1$ and $c = 3k_2$.
+\textbf{Conjecture:} If a cubic is of the form $(x-1)(x+a)^2$ then it has two \textit{integer turning points} when $a = 2-3k$ for for all $k \in \mathbb{Z}$\\
+
+\textbf{Proof:} Let $f(x)=(x-1)(x+a)^2$, expanding, we get that $$f(x)=x^3+(2a-1)x^2+(a^2-2a)x-a^2$$ 
+Taking the first derivative we obtain the following:
+$$f'(x)=3x^2+(4a-2)x+a^2-2a$$
+Using the quadratic formula, we discover that the turning points of $f(x)$ occur when $$x=\frac{2 - 4a \pm \sqrt{(4a - 2)^2 - 12(a^2 - 2a)}}{6}$$
+$$=\frac{2 - 4a \pm \sqrt{16a^2-16a+4-12a^2+24a}}{6}$$
+$$=\frac{2 - 4a \pm \sqrt{4(a^2+2a+1}}{6}$$
+$$=\frac{1 - 2a \pm \sqrt{(a+1)^2}}{3}$$
+$$=\frac{1 - 2a \pm a+1}{3}$$
+Therefore, we get that 
+$x=\frac{2 - a}{3}$ or $x=-a$\\
+Hence, in order for our turning points to be at a integer values of $x$, it must be true that $a=2-3k$ for any $k \in \mathbb{Z}$ as required.\\\\
+
+\textbf{Conjecture:} If a cubic is of the form $(x+1)(x+a)^2$ then it has two \textit{integer turning points} when $a = -2-3k$ for for all $k \in \mathbb{Z}$. The proof for this conjecture follows from the last.\\\\
+
+
+\textbf{Conjecture:} If a cubic is of the form $x^3 + bx^2 + cx + d$ where $b$ and $c$ are both multiples of $3$, then it will have \textit{integer turning points} if $k_1^2 - k_2$ is a perfect square, i.e. $\sqrt{k_1^2 - k_2}$ is an integer, for $b = 3k_1$ and $c = 3k_2$.
+
+
 
 \section{Past Paper Questions}
 
