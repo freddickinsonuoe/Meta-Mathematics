@@ -467,9 +467,6 @@ If the coefficients of a cubic are real and the discriminant is not zero, then
 If the discriminant is zero, then it has a multiple root. Furthermore, if it has real coefficients, then all of its roots are real. This can be easily shown using the definition of the discriminant involving the roots.
 
 
-
-
-
 \pagebreak 
 
 \section{Creating Nice Cubics}
@@ -609,6 +606,20 @@ Applying the quadratic formula, this leads to turning points of $g(x)$ occurring
     &= -k_1 \pm \sqrt{k_1^2 - k_2}
 \end{align*}
 Since $k_1$ is an integer, for $x$ to be an integer, $\sqrt{k_1^2 - k_2}$ needs also be an integer. Thus, for $g(x)$ to have integer turning points, $k_1^2 - k_2$ must be a perfect square.
+
+\subsection{With Depressed Cubics}
+What if we loosen up the criteria needed for ``nice" cubics? For example, suppose a teacher is setting problems on finding only the turning point of a cubic equation; we do not care for the roots. Consider a depressed cubic $P(t) = t^3 + pt + q$. Then its derivative satisfies
+\begin{equation*}
+    P'(t) = 0 \implies t = \frac{\pm \sqrt{-12p}}{6} = \frac{2\sqrt{-3p}}{6}.
+\end{equation*}
+Thus, in order for $t$ to be rational, we require $-3p = n^2$ for some integer $n \in \N_+$. With the restriction that $p$ is an integer itself, we need $-3p = m^2$ for some integer $m \in \{3n : n \in \N\}$. Examples of $p$ include
+\begin{equation*}
+    p \in \{-3, -12, -27, -48, \dots\}.
+\end{equation*}
+\hl{Will add the code and examples here.} Including the desmos.
+
+\subsection{With Vieta's Formulas}
+\hl{To talk about how we can apply Vieta's formula again here.}
 
 
 \section{Past Paper Questions}
