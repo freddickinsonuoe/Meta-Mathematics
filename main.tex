@@ -595,8 +595,19 @@ Hence, in order for our turning points to be at a integer values of $x$, it must
 \textbf{Conjecture:} If a cubic is of the form $(x+1)(x+a)^2$ then it has two \textit{integer turning points} when $a = -2-3k$ for for all $k \in \mathbb{Z}$. The proof for this conjecture follows from the last.\\\\
 
 
-\textbf{Conjecture:} If a cubic is of the form $x^3 + bx^2 + cx + d$ where $b$ and $c$ are both multiples of $3$, then it will have \textit{integer turning points} if $k_1^2 - k_2$ is a perfect square, i.e. $\sqrt{k_1^2 - k_2}$ is an integer, for $b = 3k_1$ and $c = 3k_2$.
+\textbf{Conjecture:} If a cubic is of the form $x^3 + bx^2 + cx + d$ where $b$ and $c$ are both multiples of $3$, then it will have \textit{integer turning points} if $k_1^2 - k_2$ is a perfect square, i.e. $\sqrt{k_1^2 - k_2}$ is an integer, for $b = 3k_1$ and $c = 3k_2$. \\
 
+\textbf{Proof:} Let $g(x) = x^3 + bx^2 + cx + d$ where $b = 3k_1$ and $c = 3k_2$ with $k_1, k_2 \in \mathbb{Z}$. Taking the first derivative, we obtain:
+$$g'(x) = 3x_2 + 2bx + c$$
+Applying the quadratic formula, this leads to turning points of $g(x)$ occurring when
+\begin{align*}
+    x &= \frac{-2b \pm \sqrt{4b^2 - 12c}}{6} \\
+    &= \frac{-b \pm \sqrt{b^2 - 3c}}{3} \\
+    &= \frac{-3k_1 \pm \sqrt{9k_1^2 - 9k_2}}{3} \\
+    &= \frac{-3k_1 \pm 3 \sqrt{k_1^2 - k_2}}{3} \\
+    &= -k_1 \pm \sqrt{k_1^2 - k_2}
+\end{align*}
+Since $k_1$ is an integer, for $x$ to be an integer, $\sqrt{k_1^2 - k_2}$ needs also be an integer. Thus, for $g(x)$ to have integer turning points, $k_1^2 - k_2$ must be a perfect square.
 
 
 \section{Past Paper Questions}
