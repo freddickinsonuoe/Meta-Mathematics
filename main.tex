@@ -612,11 +612,22 @@ What if we loosen up the criteria needed for ``nice" cubics? For example, suppos
 \begin{equation*}
     P'(t) = 0 \implies t = \frac{\pm \sqrt{-12p}}{6} = \frac{2\sqrt{-3p}}{6}.
 \end{equation*}
-Thus, in order for $t$ to be rational, we require $-3p = n^2$ for some integer $n \in \N_+$. With the restriction that $p$ is an integer itself, we need $-3p = m^2$ for some integer $m \in \{3n : n \in \N\}$. Examples of $p$ include
+Thus, in order for $t$ to an integer, we require $-3p = n^2$ for some integer $n \in \N_+$. With the restriction that $p$ is an integer itself, we need $-3p = m^2$ for some integer $m \in \{3n : n \in \N\}$ i.e
 \begin{equation*}
     p \in \{-3, -12, -27, -48, \dots\}.
 \end{equation*}
-\hl{Will add the code and examples here.} Including the desmos.
+Using python, we can generate these ``nice" cubics. Below are some examples where $q$ is any integer.
+\begin{center}
+\begin{tabular}{c|c}
+Cubic (in $t$) & Turning Points\\
+\hline 
+$t^3 - 3t + q$ & $(-1, q + 2), (1, q - 2)$\\
+$t^3 - 12t + q$ & $(-2, q + 16), (2, q - 16)$\\
+$t^3 - 48t + q$ & $(-3, q + 54), (3, q - 54)$
+\end{tabular}
+\end{center}
+
+\noindent \href{https://www.desmos.com/calculator/harieviric}{Here is an interactive Desmos link} that plots these curves. We could easily modify the criteria for this section such that we can generate cubics with a purely \textit{rational} turning point - indeed, taking $p$ such $-3p = m^2$ for $m \in \N$ would be enough.
 
 \subsection{With Vieta's Formulas}
 \hl{To talk about how we can apply Vieta's formula again here.}
