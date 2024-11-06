@@ -472,6 +472,12 @@ If the discriminant is zero, then it has a multiple root. Furthermore, if it has
 \section{Creating Nice Cubics}
 This gives an explanation of the introduction to Johnson's paper and then explores how we can generate these so-called \textit{Eisenstein triples}.
 
+\subsection{What is 'Nice'?}
+Before discovering the ways to create so called 'nice' cubics, we first must define what we mean by nice. The obvious place to start is with integers; a cubic with integer roots and/or integer turning points would generally be considered a nice cubic. However, does that mean we consider $$14688x^3+499392x^2-13938912x-233333568$$ a nice cubic just because it has roots at integer values $x=13, x=-26$ and $x=-47$? Clearly, there needs to be further detail into the definition of nice.\\\\
+Let us say that any integer with an absolute value less than or equal to $50$ is considered 'nice'. This term may apply to: coefficients in the cubic equation; roots of the equation; turning points of the cubic and in some cases the real and imaginary parts of a Gaussian integer. This seems like a reasonable number to call the cutoff for a nice integer.\\\\
+We can take this newly defined definition of a nice integer to allow us to define a nice rational number. Let a nice rational number be a number with co-prime integers for its numerator and denominator, each with an absolute value less than or equal to $50$.
+
+
 \subsection{Derivation of the Diophantine Equation}
 We first consider some cubic. We want it to have \textit{integer roots} and a \textit{rational turning point.} Up to suitable translation and scaling, we can consider a monic polynomial with one root at zero i.e
 \begin{equation*}
